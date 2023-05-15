@@ -1,20 +1,22 @@
 <h1>Contact</h1>
 
+<!--Formulario-->
+
 <form class="row g-3" action="/contact/create" method="get">
   <div class="col-12 d-block">
-    <label for="inputEmail4" class="form-label">Email</label>
-    <input type="email" class="form-control" id="inputEmail4" name="inputEmail4" placeholder="your Email">
+    <label for="inputName" class="form-label">Name</label>
+    <input type="text" class="form-control" id="inputName" name="inputName" placeholder="your name">
   </div>
 
   <div class="col-12 d-block">
-    <label for="inputAddress" class="form-label">Name</label>
-    <input type="text" class="form-control" id="inputAddress" name="inputAddress" placeholder="your name">
+    <label for="inputEmail" class="form-label">Email</label>
+    <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="your Email">
   </div>
   
   <div class= "col-12">
-  <label for="floatingTextarea">Comments</label>
+  <label for="inputComments">Comments</label>
   <div class="form-floating">
-  <textarea class="form-control" name="floatingTextarea" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+  <textarea class="form-control" name="inputComments" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
 
 </div>
   </div>
@@ -22,3 +24,27 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>
+<!--Fin Formulario -->
+
+<!--Captura de datos-->
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">email</th>
+      <th scope="col">comentarios</th> 
+    </tr>
+  </thead>
+  <tbody>
+  <%@contact.each do |contact|%>
+    <tr>
+      <th scope="row">1</th>
+      <td><%=contact.name%></td>
+      <td><%=contact.email%></td>
+      <td><%=contact.comments%></td>
+    </tr>
+     <%end%>  
+  </tbody>
+</table>
+<!--Fin captura de datos-->
