@@ -1,0 +1,17 @@
+<h1>Post#news</h1>
+<p>Find me in app/views/post/news.html.erb</p>
+
+<%= form_with model: @post , method: :post do |form|%>
+    <div>
+        <%= form.label :title,"Titulo del Post", class: "form-label" %>
+        <%= form.text_field :title  , class:"form-control"%>
+
+    </div>
+     <div>
+        <%= form.label :content,"Contenido del post", class: "form-label" %>
+        <%= form.text_field :content , class:"form-control"%>
+
+    </div>
+   <%= form.submit class:"btn btn-primary"%>
+<%end%>
+
